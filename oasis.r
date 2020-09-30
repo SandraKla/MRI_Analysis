@@ -1,11 +1,3 @@
-
-
-library("XLConnect")
-library(glmnet)
-library(gplots)
-
-
-
 value2colour <- function(x,min.value=0,max.value=1,blend.green=1){
   greva <- (max(c(min(c(x,max.value)),min.value)) - min.value)/(max.value - min.value)
   
@@ -608,24 +600,6 @@ best_lam <- cv_output$lambda.min
 lasso_best <- glmnet(x_vars[train,], y_var[train], alpha = 1, lambda = best_lam)
 pred <- predict(lasso_best, s = best_lam, newx = x_vars[-train,])
 
-
-
-
 coef(lasso_best)
 
-
-
 coef(lasso_best)[,1]
-
-
-
-
-
-
-
-
-
-
-
-
-

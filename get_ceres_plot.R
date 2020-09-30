@@ -1,9 +1,4 @@
-library(ggplot2)
-library(gridExtra)
-library(cowplot)
-library(randomcoloR)
 source("geom_flat_violin.R")
-
 
 ### get the facet name for four areas
 facet.area1 <- function(x){
@@ -112,7 +107,7 @@ get.plot <- function(data,area.label=NULL,add.xlabel=FALSE,fill.col="red"){
                      "area1" = "facet.area1",           
                      "area2" = "facet.area2",
                      "area3" = "facet.area3",
-                     "area4" = "facet.area4",
+                     "area4" = "facet.area4"
   )
   
   
@@ -150,7 +145,7 @@ get.plots <- function(data,area.label=NULL){
                       "area1" = "ICV",           
                       "area2" = "thickness",
                       "area3" = "cortical_thickness",
-                      "area4" = "grey_matter",
+                      "area4" = "grey_matter"
   )
   ps <- list()
   if(area.label!="area1"){
@@ -196,7 +191,3 @@ get.ceres.qc.plot <- function(data){
   
   return(creres.plot)
 }
-#################################################################
-
-
-# 

@@ -1,16 +1,7 @@
-library(readxl)
-library(ggplot2)
-library(cowplot)
-library(gridExtra)
-library(dplyr)
 source("get_ceres_plot.R")
 
 # aa <- read_excel("Cerebellum_CamCAN_R.xlsx")
 # a1 <- select(aa,"age",17)
-
-
-
-
 
 get.lm.plot <- function(data,target.col,lm.col,area.label="area2"){
   # print(get_area_name(lm.col))
@@ -106,27 +97,3 @@ get.ceres.lm.plots <- function(data,target.col){
   # ceres.lm.plot <- plot_grid(area1.plot,area2.plot,ncol=1,rel_heights = c(1.3,39.3))
   return(ceres.lm.plot)
 }
-
-
-
-
-# 
-# 
-# data <- read_excel("Cerebellum_CamCAN_R.xlsx",.name_repair = "universal")
-# # 
-# target.col <- "age"
-# # get.ceres.lm.plots(data,"age")
-
-# 
-# 
-# aa <- read_excel("Cerebellum_CamCAN_R.xlsx")
-# a1 <- select(aa,"age",20:20)
-# names(a1) <- c("explan","value")
-# p1 <- ggplot(a1,aes_string(x="explan",y="value"))+
-#   geom_point()+
-#   stat_smooth(method = lm,level = 0.95)
-# p1
-
-
-
-

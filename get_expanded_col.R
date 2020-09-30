@@ -1,6 +1,3 @@
-# library(readxl)
-library(dplyr)
-
 get.regerssion.col <- function(dat){
   not.regression.col <- NULL
   col.names <- names(dat)

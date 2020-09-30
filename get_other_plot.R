@@ -1,8 +1,4 @@
-library(cowplot)
-library(randomcoloR)
 source("geom_flat_violin.R")
-
-
 
 get.other.qc.plot <- function(data,col){
   ps <- list()
@@ -32,12 +28,3 @@ get.other.qc.plot <- function(data,col){
   
   return(plots)
 }
-
-
-# data <- read_excel("OASIS.xlsx")
-# 
-# p <- get.other.qc.plot(data,c("rh_S_collat_transv_ant_thickness","rh_S_oc_temp_lat_thickness"))
-# 
-# p <- get.other.qc.plot(data,c("lh_G_S_occipital_inf_thickness"))
-# p
-

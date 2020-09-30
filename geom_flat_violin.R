@@ -3,10 +3,6 @@
 # based mostly on copy/pasting from ggplot2 geom_violin source:
 # https://github.com/hadley/ggplot2/blob/master/R/geom-violin.r
 
-library(ggplot2)
-library(dplyr)
-
-
 "%||%" <- function(a, b) {
   if (!is.null(a)) a else b
 }
@@ -73,9 +69,3 @@ GeomFlatViolin <-
           
           required_aes = c("x", "y")
 )
-
-
-### Example:
-ggplot(diamonds, aes(cut, carat)) +
-    geom_flat_violin() +
-    coord_flip()

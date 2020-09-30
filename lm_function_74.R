@@ -1,8 +1,3 @@
-library(tidyverse)
-library(readxl)
-library(reshape2)
-library(Rmisc)
-
 add_lm_trace_freesurfer <- function(data,var_explan="reaction_time"){
   cols <- ncol(data)
   explan <- var_explan
@@ -31,6 +26,3 @@ add_lm_trace_freesurfer <- function(data,var_explan="reaction_time"){
   
   return(multiplot(plotlist = p,cols = 1))
 }
-
-
-
