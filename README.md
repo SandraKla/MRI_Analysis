@@ -1,7 +1,7 @@
 # Software tool for the Analysis and Visualization of MRI images of the brain
 
 [![License](https://img.shields.io/github/license/SandraKla/MRI_Analysis.svg)]()
-Example:
+
 <img src="www/example.png" align="center"/>
 
 
@@ -27,4 +27,4 @@ library(shiny)
 runGitHub("MRI_Analysis", "SandraKla")
 ```
 
-###All required packages are downloaded when starting this app or imported if they already exist. For more information about the required packages use the Wiki.###
+All required packages must be downloaded before starting this app. For more information about the required packages use the [Wiki](https://github.com/SandraKla/MRI_Analysis/wiki).
