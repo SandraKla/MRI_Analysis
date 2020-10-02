@@ -5,10 +5,6 @@ library(cowplot)
 library(dplyr)
 library(ggplot2)
 #library(ggpubr) 
-
-# Error: package or namespace load failed for ‘ggpubr’ in loadNamespace(j <- i[[1L]], c(lib.loc, .libPaths()), versionCheck = vI[[j]]):
-#   es gibt kein Paket namens ‘car’
-
 library(glmnet)
 library(gridExtra)
 library(gplots)
@@ -167,7 +163,6 @@ ui <- fluidPage(
         id="sideM"
         
       )
-      
     ),  
     
     
@@ -187,7 +182,6 @@ ui <- fluidPage(
         # ),
       ),
       
-      
       conditionalPanel(
         condition="output.dataFileLoad==true && input.sidebarItemExpanded=='ds' && input.data_type=='FreeSurfer'",
         tabsetPanel(
@@ -195,10 +189,8 @@ ui <- fluidPage(
           tabPanel("Table",DT::dataTableOutput("ds_table")),
           tabPanel("Statistics",DT::dataTableOutput("ds_composity")),
           tabPanel("3D",plotlyOutput("ggseg3d",height = "700px"))
-        ),
+        )
       ),
-      
-      
       
       conditionalPanel(
         condition="output.dataFileLoad==true && input.sidebarItemExpanded=='ls'",
@@ -206,26 +198,14 @@ ui <- fluidPage(
           type="tabs",id="ls_tab",
           tabPanel("Table",DT::dataTableOutput("ls_table")),
           tabPanel("Lasso tabel",DT::dataTableOutput("lasso_table"))
-        ),
+        )
       )
     )
   )
 )
 
-
-
-
-
-
-
-
-
-
-
 server<-function(input, output,session) {
   OASIS <<- NULL
-  
-  
   
   get_data_file <- reactive({
     input$data_table
@@ -239,9 +219,6 @@ server<-function(input, output,session) {
     }
   })
   
-  
-  
-  
   output$dataFileLoad <- reactive({
     return(get_data_file())
   })
@@ -249,11 +226,7 @@ server<-function(input, output,session) {
   outputOptions(output,'dataFileLoad',suspendWhenHidden=FALSE)
   
   
-  
-  
-  ######################################data preprocess######################################### 
-  
-  
+  ######################################Data preprocess######################################### 
   
   #######################################################
   #############transform the names of OASIS##############
@@ -272,8 +245,6 @@ server<-function(input, output,session) {
     }
     
   })
-  
-  
   
   
   get_fil <- reactive({
@@ -296,8 +267,6 @@ server<-function(input, output,session) {
   get_ls_fil <- reactive({
     input$ls_fil
   })
-  
-  
   
   #######################################################
   ######make the names pass to left and right brain######
@@ -375,8 +344,6 @@ server<-function(input, output,session) {
   })
   
   
-  
-  
   ## get the explan names
   get_explan_names <- reactive({
     input$data_table
@@ -394,10 +361,6 @@ server<-function(input, output,session) {
     
     return(names_explan)
   })  
-  
-  
-  
-  
   
   
   #######################################################
@@ -459,15 +422,6 @@ server<-function(input, output,session) {
     }
     return(u_oasis)
   })
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   #######################################################
@@ -655,10 +609,6 @@ server<-function(input, output,session) {
     com_cd <<- input$com_way_d
   })
   
-  
-  
-  
-  
   com_cd <<-"mean"
   aus_daten <- reactive({
     input$com_way_c
@@ -669,13 +619,6 @@ server<-function(input, output,session) {
             "SD" = "sd",
             "SEM" =  "sem")
   })
-  
-  
-  
-  
-  
-  
-  
   
   
   #######################################################
@@ -723,7 +666,6 @@ server<-function(input, output,session) {
   })
   
   
-  
   #######################################################
   ###################color update auto###################
   #######################################################  
@@ -759,8 +701,7 @@ server<-function(input, output,session) {
   }
   )
   
-  
-  
+
   
   #######################################################
   ###################control panel tab###################
@@ -861,8 +802,6 @@ server<-function(input, output,session) {
   })
   
   
-  
-  
   #######################################################
   ################Generate 3D brain map##################
   #######################################################
@@ -949,10 +888,6 @@ server<-function(input, output,session) {
   })
   
   
-  
-  
-  
-  
   observeEvent(input$ab,{
     updateTabsetPanel(session,"ds_tab",selected = "3D")
   })
@@ -968,8 +903,6 @@ server<-function(input, output,session) {
       return(d$scene.camera[["eye"]])
     }
   })
-  
-  
   
   
   #p<-output$ggseg3d
@@ -993,9 +926,6 @@ server<-function(input, output,session) {
       }
     }
   })
-  
-  
-  
   
   
   ###########################################
@@ -1155,8 +1085,6 @@ server<-function(input, output,session) {
   })
   
   
-  
-  
   ##lasso regression output###
   observeEvent(input$lp, { 
     dat<-get_ls_choice()
@@ -1183,8 +1111,6 @@ server<-function(input, output,session) {
       DT::datatable(bs.data,class = "display nowrap",options = list(scrollX=TRUE),caption = paste("Explantory variable:", label_ExplantoryVariable))
     })
   })
-  
-  
 }
 
 shinyApp(ui = ui, server = server)
