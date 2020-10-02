@@ -1,5 +1,4 @@
-
-####lass regression von Prof. Klawonn#####  
+####Lasso Regression von Prof. Klawonn#####  
 
 lasso_training_results <- function(dat,target.column,lambda_seq=10^seq(2,-2,by = -.1),alpha=1,normalise=T){
   taco <- target.column

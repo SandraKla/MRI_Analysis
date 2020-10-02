@@ -17,7 +17,3 @@ get.regerssion.col <- function(dat){
   return(names(dat))
   
 }
-
-
-
-
