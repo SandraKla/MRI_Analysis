@@ -21,3 +21,5 @@ Or use the function ```runGitHub()``` from the package *shiny*:
 library(shiny)
 runGitHub("MRI_Analysis", "SandraKla")
 ```
+
+All required [packages](./about.md) must be downloaded before starting this app. 
