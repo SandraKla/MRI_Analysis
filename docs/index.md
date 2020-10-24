@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/github/license/SandraKla/MRI_Analysis.svg)]()
 
-<img src="www/example.png" align="center"/>
+<img src="example.png" align="center"/>
 
 
 ## Installation 
