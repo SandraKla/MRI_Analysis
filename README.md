@@ -3,6 +3,7 @@
 [![License](https://img.shields.io/github/license/SandraKla/MRI_Analysis.svg)]()
 
 <img src="docs/example.png" align="center"/>
+
 For more information use the [Homepage](https://sandrakla.github.io/MRI_Analysis/).
 
 ## Installation 
