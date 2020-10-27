@@ -1,7 +1,9 @@
-# somewhat hackish solution to:
-# https://twitter.com/EamonCaddigan/status/646759751242620928
-# based mostly on copy/pasting from ggplot2 geom_violin source:
+# Based mostly on copy/pasting from ggplot2 geom_violin source:
 # https://github.com/hadley/ggplot2/blob/master/R/geom-violin.r
+
+sem <- function(x){
+  return(sd(x)/sqrt(length(x)))
+}
 
 "%||%" <- function(a, b) {
   if (!is.null(a)) a else b

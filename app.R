@@ -1,27 +1,6 @@
 ####################################### Libraries ########################################
 
-library(colourpicker)
-library(cowplot)
-library(dplyr)
-library(ggplot2)
-#library(ggpubr) 
-library(glmnet)
-library(gridExtra)
-library(gplots)
-library(plotly)
-library(plyr)
-library(processx)
-library(readxl)
-library(reshape2)
-library(randomcoloR)
-library(Rmisc)
-library(scales)
-library(shiny)
-library(shinyWidgets)
-library(shinydashboard)
-library(tidyr)
-library(tidyverse)
-library(XLConnect)
+source("libraries.R")
 
 ####################################### Scripts ##########################################
 
@@ -40,10 +19,7 @@ file.source=list.files("ggseg3d//R",pattern="*.R",full.names = TRUE)
 lapply(file.source, source,.GlobalEnv)
 load("desterieux_3d.rda")
 
-sem <- function(x){
-  return(sd(x)/sqrt(length(x)))
-}
-
+####################################### User Interface ###################################
 
 ui <- fluidPage(
   dashboardPage(
@@ -204,11 +180,14 @@ ui <- fluidPage(
   )
 )
 
+####################################### Server ###########################################
+
 server<-function(input, output,session) {
   OASIS <<- NULL
   
   get_data_file <- reactive({
     input$data_table
+    saving <<- 
     if(!is.null(input$data_table)){
       OASIS <<- read_excel(input$data_table[["datapath"]])
       return(TRUE)
@@ -323,7 +302,8 @@ server<-function(input, output,session) {
   
   output$fil_qc <- renderUI({
     input$name_file
-    tagList(
+   
+      tagList(
       selectInput("qc_fil",label = "Filter",choices = names(get_oasis())[-1],multiple = TRUE)
     )
   })
