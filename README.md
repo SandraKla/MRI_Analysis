@@ -2,8 +2,8 @@
 
 [![License](https://img.shields.io/github/license/SandraKla/MRI_Analysis.svg)]()
 
-<img src="www/example.png" align="center"/>
-
+<img src="docs/example.png" align="center"/>
+For more information use the [Homepage](https://sandrakla.github.io/MRI_Analysis/).
 
 ## Installation 
 
@@ -27,4 +27,4 @@ library(shiny)
 runGitHub("MRI_Analysis", "SandraKla")
 ```
 
-All required packages must be downloaded before starting this app. For more information about the required packages use the [Wiki](https://github.com/SandraKla/MRI_Analysis/wiki).
+All required packages must be downloaded before starting this app. For more information about the required packages use the [Homepage](https://sandrakla.github.io/MRI_Analysis/).
