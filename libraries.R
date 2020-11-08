@@ -22,9 +22,9 @@ if("ggplot2" %in% rownames(installed.packages())){
   library(ggplot2)} else{
     install.packages("ggplot2")}
 
-if("ggpubr" %in% rownames(installed.packages())){
-  library(ggpubr)} else{
-    install.packages("ggpubr")}
+# if("ggpubr" %in% rownames(installed.packages())){
+#  library(ggpubr)} else{
+#    install.packages("ggpubr")}
 
 if("glmnet" %in% rownames(installed.packages())){
   library(glmnet)} else{
