@@ -34,9 +34,9 @@ if("gridExtra" %in% rownames(installed.packages())){
   library(gridExtra)} else{
     install.packages("gridExtra")}
 
-if("gplots" %in% rownames(installed.packages())){
-  library(gplots)} else{
-    install.packages("gplots")}
+# if("gplots" %in% rownames(installed.packages())){
+#  library(gplots)} else{
+#    install.packages("gplots")}
 
 if("plotly" %in% rownames(installed.packages())){
   library(plotly)} else{
@@ -54,13 +54,13 @@ if("reshape2" %in% rownames(installed.packages())){
   library(reshape2)} else{
     install.packages("reshape2")}
 
-if("randomcoloR" %in% rownames(installed.packages())){
-  library(randomcoloR)} else{
-    install.packages("randomcoloR")}
+# if("randomcoloR" %in% rownames(installed.packages())){
+#  library(randomcoloR)} else{
+#    install.packages("randomcoloR")}
 
-if("Rmisc" %in% rownames(installed.packages())){
-  library(Rmisc)} else{
-    install.packages("Rmisc")}
+# if("Rmisc" %in% rownames(installed.packages())){
+#   library(Rmisc)} else{
+#    install.packages("Rmisc")}
 
 if("scales" %in% rownames(installed.packages())){
   library(scales)} else{
@@ -86,6 +86,6 @@ if("tidyverse" %in% rownames(installed.packages())){
   library(tidyverse)} else{
     install.packages("tidyverse")}
 
-if("XLConnect" %in% rownames(installed.packages())){
-  library(XLConnect)} else{
-    install.packages("XLConnect")}
+# if("XLConnect" %in% rownames(installed.packages())){
+#  library(XLConnect)} else{
+#    install.packages("XLConnect")}
